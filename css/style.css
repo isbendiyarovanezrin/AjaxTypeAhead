@@ -61,7 +61,7 @@ input {
 }
 
 .search-input[type="search"]::-webkit-search-cancel-button {
-  cursor: none;
+  cursor: pointer;
 }
 
 .suggestions {
@@ -72,7 +72,6 @@ input {
 .suggestions li {
   padding: 2rem;
   display: flex;
-  cursor: text;
   justify-content: space-between;
   text-transform: capitalize;
   transition: all 0.2s linear;
