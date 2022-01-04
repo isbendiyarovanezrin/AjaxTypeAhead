@@ -52,12 +52,22 @@ function numWithCommas(n) {
 }
 
 // cursor
-let cursor = document.getElementById("cursor");
+const cursor = document.getElementById("cursor");
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("mousemove", changeCursor);
+
+function changeCursor(e) {
   let x = e.pageX;
   let y = e.pageY;
 
   cursor.style.left = `${x}px`;
   cursor.style.top = `${y}px`;
+}
+
+document.querySelector(".search-input").addEventListener("mousemove", () => {
+  document.removeEventListener("mousemove", changeCursor);
+});
+
+document.querySelector(".search-input").addEventListener("mouseleave", () => {
+  document.addEventListener("mousemove", changeCursor);
 });
