@@ -5,6 +5,7 @@
   --sapphire-blue-color: #395fa0;
   --text-color: #3f3e3e;
   --word-bg-color: #68c7f8b3;
+  --loader-bg-color: #f7f7f7;
   --border-color1: #f7f7f7;
   --border-color2: #d8d8d8;
   --shadow-color1: #0000001f;
@@ -22,6 +23,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 html {
   font-size: 10px;
 }
@@ -36,8 +41,8 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  overflow: hidden;
   line-height: 0;
+  overflow: hidden;
   transform: rotate(180deg);
 }
 
@@ -45,7 +50,7 @@ body {
   position: relative;
   display: block;
   width: calc(100% + 0.2rem);
-  height: 29rem;
+  height: 25rem;
 }
 
 .custom-shape-divider-bottom .shape-fill {
@@ -165,6 +170,119 @@ span.population {
   background-color: var(--blue-color);
   outline: 0.7rem solid var(--sapphire-blue-color);
   box-shadow: 0 0 0.2rem var(--shadow-color2);
+}
+
+/* loader */
+.cssload-container {
+  top: 0;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--loader-bg-color);
+}
+
+.cssload-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.cssload-flex-container li {
+  height: 13.8rem;
+  width: 13.8rem;
+  padding: 1.4rem;
+  position: relative;
+  text-align: center;
+}
+
+.cssload-loading {
+  display: inline-block;
+  height: 11rem;
+  width: 11rem;
+  border-radius: 100%;
+  border: 0.6rem solid var(--blue-color);
+  animation: cssload-spinShrink 2s ease-in infinite alternate;
+}
+
+.cssload-loading:after {
+  content: "";
+  right: 1.8rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  display: block;
+  background-color: var(--blue-color);
+  position: absolute;
+  border-radius: 100%;
+  animation: cssload-dotShrink 2s ease-in infinite alternate;
+}
+
+.cssload-loading:before {
+  content: "";
+  height: 1.4rem;
+  width: 1.4rem;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 0.3rem solid var(--blue-color);
+  transform: translate(-50%, -50%);
+  animation: cssload-ring 3s ease infinite;
+}
+
+@keyframes cssload-spinShrink {
+  from {
+    width: 11rem;
+    height: 11rem;
+    transform: rotate(0deg);
+  }
+
+  to {
+    width: 1.4rem;
+    height: 1.4rem;
+    transform: rotate(1080deg);
+    margin-top: 4.1rem;
+  }
+}
+
+@keyframes cssload-dotShrink {
+  from {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  to {
+    height: 0.4rem;
+    width: 0.4rem;
+    right: 0;
+  }
+}
+
+@keyframes cssload-ring {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  51% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+    width: 13.8rem;
+    height: 13.8rem;
+  }
 }
 
 /* media queries */

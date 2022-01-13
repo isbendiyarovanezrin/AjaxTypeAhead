@@ -72,3 +72,14 @@ document.querySelector(".search-input").addEventListener("mousemove", () => {
 document.querySelector(".search-input").addEventListener("mouseleave", () => {
   document.addEventListener("mousemove", changeCursor);
 });
+
+// loader
+$(window).on("load", () => {
+  setTimeout(removeLoader, 1960);
+});
+
+function removeLoader() {
+  $(".cssload-container").fadeOut(500, () => {
+    $(".cssload-container").remove();
+  });
+}
