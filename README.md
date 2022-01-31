@@ -1,9 +1,11 @@
 <div align="center">
-  <a href="https://isbendiyarovanezrin.github.io/AjaxTypeAhead">
-    <img
-      width="57%"
-      src="https://i.postimg.cc/s2Qd1B0m/text.png"
-      title="Click me!"
-    />
-  </a>
+  
+<img width="27%" src="https://i.postimg.cc/s2Qd1B0m/text.png"/>
+
+#### You can view the project [here](https://isbendiyarovanezrin.github.io/AjaxTypeAhead "Click me!👀").
+
+##### Screenshot
+
+!["Ajax Type Ahead" project screenshot](https://i.postimg.cc/PqhS99bD/ta.png)
+
 </div>
