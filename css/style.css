@@ -1,11 +1,10 @@
 :root {
-  --white-color: #fff;
+  --white-color: #ffffff;
   --grey-color: #efefef;
   --blue-color: #658aaf;
   --sapphire-blue-color: #395fa0;
   --text-color: #3f3e3e;
   --word-bg-color: #68c7f8b3;
-  --loader-bg-color: #f7f7f7;
   --border-color1: #f7f7f7;
   --border-color2: #d8d8d8;
   --shadow-color1: #0000001f;
@@ -33,29 +32,32 @@ html {
 }
 
 body {
-  background-color: var(--blue-color);
   overflow-x: hidden;
-}
-
-.custom-shape-divider-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  line-height: 0;
-  overflow: hidden;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 0.2rem);
-  height: 25rem;
-}
-
-.custom-shape-divider-bottom .shape-fill {
-  fill: var(--white-color);
+  background: linear-gradient(
+      135deg,
+      var(--blue-color) 2.1rem,
+      var(--word-bg-color) 2.2rem,
+      var(--word-bg-color) 2.4rem,
+      transparent 2.4rem,
+      transparent 6.7rem,
+      var(--word-bg-color) 6.7rem,
+      var(--word-bg-color) 6.9rem,
+      transparent 6.9rem
+    ),
+    linear-gradient(
+        225deg,
+        var(--blue-color) 2.1rem,
+        var(--word-bg-color) 2.2rem,
+        var(--word-bg-color) 2.4rem,
+        transparent 2.4rem,
+        transparent 6.7rem,
+        var(--word-bg-color) 6.7rem,
+        var(--word-bg-color) 6.9rem,
+        transparent 6.9rem
+      )
+      0 6.4rem,
+    var(--blue-color);
+  background-size: 6.4rem 12.8rem;
 }
 
 input {
@@ -142,7 +144,7 @@ span.population {
   background-color: var(--blue-color);
 }
 
-/* scrollbar */
+/* scrollbar start */
 ::-webkit-scrollbar {
   width: 1.5rem;
 }
@@ -157,8 +159,9 @@ span.population {
   border-radius: 1rem;
   background-color: var(--sapphire-blue-color);
 }
+/* scrollbar end */
 
-/* cursor */
+/* cursor start */
 #cursor {
   width: 0.5rem;
   height: 0.5rem;
@@ -172,8 +175,9 @@ span.population {
   outline: 0.7rem solid var(--sapphire-blue-color);
   box-shadow: 0 0 0.2rem var(--shadow-color2);
 }
+/* cursor end */
 
-/* loader */
+/* loader start */
 .cssload-container {
   top: 0;
   z-index: 200;
@@ -183,7 +187,7 @@ span.population {
   align-items: center;
   justify-content: center;
   position: absolute;
-  background-color: var(--loader-bg-color);
+  background-color: var(--border-color1);
 }
 
 .cssload-flex-container {
@@ -285,8 +289,9 @@ span.population {
     height: 13.8rem;
   }
 }
+/* loader end */
 
-/* media queries */
+/* media queries start */
 @media screen and (max-width: 900px) {
   html {
     font-size: 8px;
@@ -310,3 +315,4 @@ span.population {
     font-size: 5px;
   }
 }
+/* media queries end */
